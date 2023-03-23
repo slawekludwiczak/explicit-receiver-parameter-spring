@@ -9,10 +9,10 @@ import org.springframework.validation.annotation.Validated;
 @Component
 @Validated
 class Foo {
-    @Min(0)
-    @NotNull
     private Integer x;
 
+    @Min(0)
+    @NotNull
     public Integer getX() {
         return x;
     }

@@ -1,10 +1,12 @@
 package com.example.receiverdemo;
 
 import jakarta.validation.ConstraintViolationException;
-import org.junit.jupiter.api.Assertions;
+import jakarta.validation.Valid;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.lang.reflect.AnnotatedType;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +15,12 @@ class ReceiverdemoApplicationTests {
 
     @Autowired
     Foo foo;
+
+    @Test
+    void ecplivitReceiverParamIsAnnotatedWithValid() throws NoSuchMethodException {
+        AnnotatedType validatedFoo = Foo.class.getMethod("validatedFoo").getAnnotatedReceiverType();
+        assertNotNull(validatedFoo.getAnnotation(Valid.class));
+    }
 
     @Test
     void shouldWorkForObjectWithValidState() {

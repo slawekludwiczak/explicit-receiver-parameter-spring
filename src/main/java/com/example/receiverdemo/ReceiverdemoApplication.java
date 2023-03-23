@@ -18,10 +18,6 @@ public class ReceiverdemoApplication {
 //
 //        fooBean.setX(-5);
 //        System.out.println(fooBean.standardFoo());
-//        System.out.println(fooBean.validatedFoo());
-//
-//        AnnotatedType validatedFoo = Foo.class.getMethod("validatedFoo").getAnnotatedReceiverType();
-//        System.out.println(validatedFoo);
+//        System.out.println(fooBean.validatedFoo()); //expected ConstraintViolationException
     }
-
 }
